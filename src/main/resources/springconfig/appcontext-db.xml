@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-2.0.xsd ">
+
+	<bean id="web-dataSource" class="com.dianping.zebra.group.jdbc.GroupDataSource" init-method="init">
+		<property name="extraJdbcUrlParams" value="useAffectedRows=true" />
+		<property name="jdbcRef" value="hiring_campus_ats" />
+		<property name="routerType" value="fail-over" />
+		<property name="connectionInitSql" value="set names utf8mb4"/>
+		<property name="poolType" value="tomcat-jdbc"/>
+	</bean>
+
+	<!-- transaction manager, use JtaTransactionManager for global tx -->
+	<bean id="web-transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="web-dataSource" />
+	</bean>
+
+	<!--事务控制-->
+	<tx:annotation-driven transaction-manager="web-transactionManager" />
+
+	<!-- define the SqlSessionFactory -->
+	<bean id="web-sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="web-dataSource" />
+		<property name="mapperLocations">
+			<array>
+				<value>classpath:mapper/*.xml</value>
+			</array>
+		</property>
+		<property name="typeAliasesPackage"
+				  value="com.wf.self.dao.po" />
+	</bean>
+
+	<!-- scan for mappers and let them be autowired -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage"
+			value="com.eric.self.dao.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="web-sqlSessionFactory" />
+	</bean>
+
+
+</beans>

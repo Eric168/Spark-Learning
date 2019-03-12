@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 数据库驱动-->
+    <classPathEntry  location="/Users/wangfeng/Downloads/mysql-connector-java-5.1.36.jar"/>
+    <context id="mysql" defaultModelType="flat" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+        <!--数据库链接URL，用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://10.72.234.31:3306/Hiring_Campus_ATS?characterEncoding=UTF8" userId="hiring_campusats" password="dp!@sZiFTy3Qv">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!-- 生成模型的包名和位置-->
+        <javaModelGenerator targetPackage="com.wf.self.dao.po" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!-- 生成映射文件的包名和位置-->
+        <sqlMapGenerator targetPackage="com.wf.self.dao.po" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!-- 要生成哪些表-->
+        <!-- 生成DAO的包名和位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.wf.self.dao.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--<table tableName="Table_Relation" domainObjectName="TableRelation"-->
+        <!--enableCountByExample="false"-->
+        <!--enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false"-->
+        <!--enableSelectByExample="true"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--<ignoreColumn column="UpdateTime"></ignoreColumn>-->
+        <!--<ignoreColumn column="AddTime"></ignoreColumn>-->
+        <!--</table>-->
+
+        <!--<table tableName="1_ApplyJob" domainObjectName="ApplyJobPO"-->
+        <!--enableCountByExample="false"-->
+        <!--enableUpdateByExample="false"-->
+        <!--enableDeleteByExample="false"-->
+        <!--enableSelectByExample="false"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--<ignoreColumn column="Id"></ignoreColumn>-->
+        <!--<ignoreColumn column="UpdateTime"></ignoreColumn>-->
+        <!--<ignoreColumn column="AddTime"></ignoreColumn>-->
+
+        <!--</table>-->
+
+        <!--<table tableName="User" domainObjectName="User"-->
+        <!--enableCountByExample="false"-->
+        <!--enableUpdateByExample="true"-->
+        <!--enableDeleteByExample="false"-->
+        <!--enableSelectByExample="true"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--<ignoreColumn column="Id"></ignoreColumn>-->
+        <!--<ignoreColumn column="UpdateTime"></ignoreColumn>-->
+        <!--<ignoreColumn column="AddTime"></ignoreColumn>-->
+
+        <!--</table>-->
+
+        <!--<table tableName="Project" domainObjectName="Project"-->
+        <!--enableCountByExample="false"-->
+        <!--enableUpdateByExample="true"-->
+        <!--enableDeleteByExample="false"-->
+        <!--enableSelectByExample="true"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--<ignoreColumn column="UpdateTime"></ignoreColumn>-->
+        <!--<ignoreColumn column="AddTime"></ignoreColumn>-->
+
+        <!--</table>-->
+
+        <!--<table tableName="ProjectDataSource" domainObjectName="ProjectDataSource"-->
+        <!--enableCountByExample="false"-->
+        <!--enableUpdateByExample="true"-->
+        <!--enableDeleteByExample="false"-->
+        <!--enableSelectByExample="true"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--<ignoreColumn column="UpdateTime"></ignoreColumn>-->
+        <!--<ignoreColumn column="AddTime"></ignoreColumn>-->
+
+        <!--</table>-->
+
+        <!--<table tableName="ApplyJob_Offer" domainObjectName="ApplyJobOffer"-->
+        <!--enableCountByExample="false"-->
+        <!--enableUpdateByExample="true"-->
+        <!--enableDeleteByExample="false"-->
+        <!--enableSelectByExample="true"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--<ignoreColumn column="UpdateTime"></ignoreColumn>-->
+        <!--<ignoreColumn column="AddTime"></ignoreColumn>-->
+
+        <!--</table>-->
+
+        <!--<table tableName="ApplyJob_OfferWorkflow" domainObjectName="ApplyJobOfferWorkflow"-->
+        <!--enableCountByExample="false"-->
+        <!--enableUpdateByExample="true"-->
+        <!--enableDeleteByExample="false"-->
+        <!--enableSelectByExample="true"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--<ignoreColumn column="UpdateTime"></ignoreColumn>-->
+        <!--<ignoreColumn column="AddTime"></ignoreColumn>-->
+
+        <!--</table>-->
+
+        <!--<table tableName="ApplyJob_OfferWorkflowNode" domainObjectName="ApplyJobOfferWorkflowNode"-->
+        <!--enableCountByExample="false"-->
+        <!--enableUpdateByExample="true"-->
+        <!--enableDeleteByExample="false"-->
+        <!--enableSelectByExample="true"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--<ignoreColumn column="UpdateTime"></ignoreColumn>-->
+        <!--<ignoreColumn column="AddTime"></ignoreColumn>-->
+
+        <!--</table>-->
+
+        <!--<table tableName="Org_Job_Relation" domainObjectName="OrgJobRelation"-->
+        <!--enableCountByExample="false"-->
+        <!--enableUpdateByExample="true"-->
+        <!--enableDeleteByExample="false"-->
+        <!--enableSelectByExample="true"-->
+        <!--selectByExampleQueryId="false">-->
+        <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--<ignoreColumn column="UpdateTime"></ignoreColumn>-->
+        <!--<ignoreColumn column="AddTime"></ignoreColumn>-->
+
+        <!--</table>-->
+
+        <table tableName="User_Authority" domainObjectName="UserAuthority"
+               enableCountByExample="false"
+               enableUpdateByExample="true"
+               enableDeleteByExample="false"
+               enableSelectByExample="true"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true"/>
+            <ignoreColumn column="UpdateTime"></ignoreColumn>
+            <ignoreColumn column="AddTime"></ignoreColumn>
+        </table>
+
+
+    </context>
+</generatorConfiguration>
